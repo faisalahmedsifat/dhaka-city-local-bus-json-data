@@ -16,7 +16,7 @@ def get_bus_data(url):
                 local_data = {}
                 if len(cols) != 0:
                     bus_name_english = cols[0].text.split('(')[0].replace(' Bus Route', '').strip()
-                    bus_name_bangle = cols[0].text.split('(')[1].replace(')', '').strip()
+                    bus_name_bangla = cols[0].text.split('(')[1].replace(')', '').strip()
                     routes = cols[1].text.replace('See Full Route Map', '')\
                         .replace(' ', ' ').replace('–', '⇄').split('⇄')
                     final_routes = []
@@ -26,7 +26,7 @@ def get_bus_data(url):
                     service_type = cols[3].text
                     local_data = {
                         "english": bus_name_english,
-                        "bangle": bus_name_bangle,
+                        "bangla": bus_name_bangla,
                         "image": "",
                         "routes": final_routes,
                         "time": time,
